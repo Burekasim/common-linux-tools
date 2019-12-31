@@ -17,5 +17,8 @@ jobs:
       env: # Or as an environment variable
         sss: ${{ secrets.sss }}
       run: |
-        echo $sss > secret_key && chmod 400 secret_key && cat secret_key 
-        tail secret_key #ssh -i secret_key -o StrictHostKeyChecking=no avik@34.74.245.53 /usr/bin/hostname -s
+        #echo $sss > secret_key && chmod 400 secret_key && cat secret_key 
+        echo "t" && head -n 2 secret_key
+        export
+        head -n 1  secret_key 
+        #ssh -i secret_key -o StrictHostKeyChecking=no avik@34.74.245.53 /usr/bin/hostname -s
