@@ -18,4 +18,4 @@ jobs:
         sss: ${{ secrets.sss }}
       run: |
         echo $sss > secret_key && chmod 400 secret_key && cat secret_key 
-        ssh -i secret_key -o StrictHostKeyChecking=no avik@34.74.245.53 /usr/bin/hostname -s
+        tail secret_key #ssh -i secret_key -o StrictHostKeyChecking=no avik@34.74.245.53 /usr/bin/hostname -s
