@@ -10,7 +10,9 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Run a one-line script
-      run: echo bla
+      env: # Or as an environment variable
+        sss: ${{ secrets.sss }}
+      run: echo $sss
     - name: Run a multi-line script
       env: # Or as an environment variable
         sss: ${{ secrets.sss }}
